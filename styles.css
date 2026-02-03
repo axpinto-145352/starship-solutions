@@ -81,14 +81,14 @@ h1,h2,h3,h4,h5 { line-height: 1.2; }
   50% { opacity: 0.5; }
 }
 
-.hero-content { position: relative; z-index: 1; color: var(--white); max-width: 720px; }
-.hero-logo { max-width: 400px; margin-bottom: 24px; }
+.hero-content { position: relative; z-index: 1; color: var(--white); max-width: 720px; margin: 0 auto; text-align: center; }
+.hero-logo { max-width: 400px; margin: 0 auto 24px; }
 .hero-badge { display: inline-block; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); padding: 6px 16px; border-radius: 24px; font-size: .85rem; font-weight: 500; margin-bottom: 24px; }
 .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 20px; }
 .text-gradient { background: linear-gradient(135deg, var(--star-gold) 0%, var(--star-gold-light) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.hero-subtitle { font-size: 1.1rem; color: rgba(255,255,255,.75); margin-bottom: 32px; max-width: 560px; }
-.hero-actions { display: flex; gap: 16px; margin-bottom: 48px; flex-wrap: wrap; }
-.hero-stats { display: flex; gap: 48px; }
+.hero-subtitle { font-size: 1.1rem; color: rgba(255,255,255,.75); margin: 0 auto 32px; max-width: 560px; }
+.hero-actions { display: flex; gap: 16px; margin-bottom: 48px; flex-wrap: wrap; justify-content: center; }
+.hero-stats { display: flex; gap: 48px; justify-content: center; }
 .stat strong { display: block; font-size: 1.8rem; font-weight: 800; color: var(--star-gold); }
 .stat span { font-size: .85rem; color: rgba(255,255,255,.6); }
 
@@ -176,8 +176,8 @@ h1,h2,h3,h4,h5 { line-height: 1.2; }
 .edu-card p { color: var(--gray-500); font-size: .9rem; margin-bottom: 12px; }
 
 /* === MILESTONES === */
-.milestones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; position: relative; z-index: 1; }
-.milestone { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); padding: 32px 24px; border-radius: var(--radius); text-align: center; transition: var(--transition); }
+.milestones-grid { display: flex; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1; justify-content: center; }
+.milestone { flex: 0 1 240px; max-width: 280px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); padding: 32px 24px; border-radius: var(--radius); text-align: center; transition: var(--transition); }
 .milestone:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
 .milestone-num { width: 48px; height: 48px; border-radius: 50%; background: var(--star-gold); color: var(--space-navy); font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
 .milestone h4 { color: var(--white); margin-bottom: 8px; }
