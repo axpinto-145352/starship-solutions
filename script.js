@@ -38,6 +38,7 @@ const calPrev = document.getElementById('calPrev');
 const calNext = document.getElementById('calNext');
 
 // Events data (month is 0-indexed)
+// Weekly Monday meetings + specific events
 const events = [
   { date: new Date(2026, 1, 15), title: 'HowMoneyWorks Workshop for Veterans' },
   { date: new Date(2026, 1, 22), title: 'Military Spouse Financial Planning' },
@@ -67,11 +68,16 @@ function renderCalendar() {
 
   // Current month days
   for (let d = 1; d <= daysInMonth; d++) {
+    const currentDayDate = new Date(year, month, d);
     const isToday = d === today.getDate() && month === today.getMonth() && year === today.getFullYear();
     const hasEvent = events.some(e => e.date.getDate() === d && e.date.getMonth() === month && e.date.getFullYear() === year);
+    const isMonday = currentDayDate.getDay() === 1; // Monday = weekly meeting
+
     let cls = 'cal-day';
     if (isToday) cls += ' today';
     if (hasEvent) cls += ' has-event';
+    if (isMonday) cls += ' monday has-event'; // All Mondays have the weekly meeting
+
     html += `<div class="${cls}">${d}</div>`;
   }
 
@@ -117,21 +123,21 @@ document.getElementById('successModal').addEventListener('click', (e) => {
 // Registration form
 document.getElementById('registrationForm').addEventListener('submit', (e) => {
   e.preventDefault();
-  showModal('Registration Received!', 'Thank you for registering for the All-Stars & Stripes program. We\'ll send you a confirmation email with next steps.');
+  showModal('Registration Received!', 'Thank you for registering for the All-Stars & Stripes program. Angela will send you a confirmation email with next steps.');
   e.target.reset();
 });
 
 // Volunteer form
 document.getElementById('volunteerForm').addEventListener('submit', (e) => {
   e.preventDefault();
-  showModal('Application Received!', 'Thank you for your interest in volunteering! We\'ll review your application and reach out within 48 hours.');
+  showModal('Application Received!', 'Thank you for your interest in volunteering! Angela will review your application and reach out within 48 hours.');
   e.target.reset();
 });
 
 // Contact form
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
-  showModal('Message Sent!', 'Thank you for reaching out! A financial educator will contact you within 24 hours to schedule your free consultation.');
+  showModal('Message Sent!', 'Thank you for reaching out! Angela will contact you within 24 hours to schedule your free consultation.');
   e.target.reset();
 });
 
@@ -145,3 +151,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Expose switchTab globally for onclick handlers
+window.switchTab = switchTab;
+window.closeModal = closeModal;
