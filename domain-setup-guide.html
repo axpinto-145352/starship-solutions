@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Setup Guide - Starship Solutions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.5in;
+      background: white;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #1a1a2e;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      color: #1a1a2e;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .header .subtitle {
+      color: #666;
+      font-size: 16px;
+    }
+
+    .intro {
+      background: #f0f4ff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #4a6cf7;
+    }
+
+    .intro h2 {
+      color: #1a1a2e;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .intro p {
+      color: #555;
+    }
+
+    .step {
+      margin-bottom: 30px;
+      page-break-inside: avoid;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .step-number {
+      background: #1a1a2e;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      color: #1a1a2e;
+      font-size: 20px;
+    }
+
+    .step-content {
+      margin-left: 55px;
+    }
+
+    .instruction {
+      background: #fafafa;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .instruction ol, .instruction ul {
+      margin-left: 20px;
+    }
+
+    .instruction li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: #fff3cd;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .important {
+      background: #d4edda;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #28a745;
+      margin: 15px 0;
+    }
+
+    .important-title {
+      font-weight: bold;
+      color: #155724;
+      margin-bottom: 5px;
+    }
+
+    .warning {
+      background: #fff3cd;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #ffc107;
+      margin: 15px 0;
+    }
+
+    .warning-title {
+      font-weight: bold;
+      color: #856404;
+      margin-bottom: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    th {
+      background: #1a1a2e;
+      color: white;
+      padding: 12px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .code {
+      font-family: 'Courier New', monospace;
+      background: #e9ecef;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    .checklist {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .checklist li {
+      padding: 8px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      font-size: 18px;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 2px dashed #ccc;
+      margin: 40px 0;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #1a1a2e;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .time-estimate {
+      display: inline-block;
+      background: #e7f3ff;
+      color: #0066cc;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    @media print {
+      body {
+        padding: 0.25in;
+      }
+
+      .step {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>🚀 Starship Solutions</h1>
+    <p class="subtitle">Domain Setup Guide for starship-solutions.com</p>
+  </div>
+
+  <div class="intro">
+    <h2>What This Guide Will Help You Do</h2>
+    <p>Your new website is ready! This guide will walk you through connecting your domain name <strong>starship-solutions.com</strong> (which you own at GoDaddy) to your new website. Once complete, anyone who types in starship-solutions.com will see your beautiful new site.</p>
+    <p style="margin-top: 10px;"><span class="time-estimate">⏱ Estimated time: 15-20 minutes</span></p>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">1</div>
+      <h2 class="step-title">Log Into Your GoDaddy Account</h2>
+    </div>
+    <div class="step-content">
+      <div class="instruction">
+        <ol>
+          <li>Open your web browser and go to <strong>www.godaddy.com</strong></li>
+          <li>Click <span class="highlight">Sign In</span> in the top right corner</li>
+          <li>Enter your GoDaddy username and password</li>
+          <li>Once logged in, you'll see your GoDaddy dashboard</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">2</div>
+      <h2 class="step-title">Find Your Domain Settings</h2>
+    </div>
+    <div class="step-content">
+      <div class="instruction">
+        <ol>
+          <li>Look for a menu item called <span class="highlight">My Products</span> or <span class="highlight">Domains</span></li>
+          <li>Find <strong>starship-solutions.com</strong> in your list of domains</li>
+          <li>Click on the domain name or click the <span class="highlight">DNS</span> button next to it</li>
+          <li>You should now see a page titled "DNS Management" or "DNS Records"</li>
+        </ol>
+      </div>
+      <div class="important">
+        <div class="important-title">✓ You're in the right place if:</div>
+        You see a table with columns like "Type", "Name", "Value", and "TTL"
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">3</div>
+      <h2 class="step-title">Remove Old A Records</h2>
+    </div>
+    <div class="step-content">
+      <div class="instruction">
+        <ol>
+          <li>Look through the list for any rows where the <strong>Type</strong> column says <span class="highlight">A</span></li>
+          <li>If the <strong>Name</strong> column shows <span class="code">@</span> — these need to be deleted</li>
+          <li>Click the pencil icon (edit) or trash icon (delete) next to each old A record</li>
+          <li>Confirm the deletion when asked</li>
+        </ol>
+      </div>
+      <div class="warning">
+        <div class="warning-title">⚠️ Don't worry!</div>
+        It's normal to delete old records. We're replacing them with new ones that point to your new website.
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">4</div>
+      <h2 class="step-title">Add New A Records (4 Total)</h2>
+    </div>
+    <div class="step-content">
+      <p style="margin-bottom: 15px;">Now add these 4 new records. You'll need to click <span class="highlight">Add</span> or <span class="highlight">Add Record</span> for each one:</p>
+
+      <table>
+        <tr>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Value (Points to)</th>
+          <th>TTL</th>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td><span class="code">@</span></td>
+          <td><span class="code">185.199.108.153</span></td>
+          <td>600 (or "10 minutes")</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td><span class="code">@</span></td>
+          <td><span class="code">185.199.109.153</span></td>
+          <td>600 (or "10 minutes")</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td><span class="code">@</span></td>
+          <td><span class="code">185.199.110.153</span></td>
+          <td>600 (or "10 minutes")</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td><span class="code">@</span></td>
+          <td><span class="code">185.199.111.153</span></td>
+          <td>600 (or "10 minutes")</td>
+        </tr>
+      </table>
+
+      <div class="instruction">
+        <p><strong>For each record:</strong></p>
+        <ol>
+          <li>Click <span class="highlight">Add</span> or <span class="highlight">Add Record</span></li>
+          <li>Select <strong>A</strong> as the Type</li>
+          <li>Enter <span class="code">@</span> in the Name field</li>
+          <li>Enter the number (like <span class="code">185.199.108.153</span>) in the Value field</li>
+          <li>Set TTL to 600 or select "10 minutes" from dropdown</li>
+          <li>Click <span class="highlight">Save</span></li>
+          <li>Repeat for all 4 records</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">5</div>
+      <h2 class="step-title">Add CNAME Record for "www"</h2>
+    </div>
+    <div class="step-content">
+      <p style="margin-bottom: 15px;">This makes sure <strong>www.starship-solutions.com</strong> also works:</p>
+
+      <table>
+        <tr>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Value (Points to)</th>
+          <th>TTL</th>
+        </tr>
+        <tr>
+          <td>CNAME</td>
+          <td><span class="code">www</span></td>
+          <td><span class="code">axpinto-145352.github.io</span></td>
+          <td>600 (or "10 minutes")</td>
+        </tr>
+      </table>
+
+      <div class="instruction">
+        <ol>
+          <li>Click <span class="highlight">Add</span> or <span class="highlight">Add Record</span></li>
+          <li>Select <strong>CNAME</strong> as the Type</li>
+          <li>Enter <span class="code">www</span> in the Name field</li>
+          <li>Enter <span class="code">axpinto-145352.github.io</span> in the Value field</li>
+          <li>Set TTL to 600</li>
+          <li>Click <span class="highlight">Save</span></li>
+        </ol>
+      </div>
+
+      <div class="important">
+        <div class="important-title">✓ Done with GoDaddy!</div>
+        You can now close GoDaddy. The changes will take some time to spread across the internet (usually 15 minutes to a few hours, sometimes up to 24 hours).
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- STEP 6 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">6</div>
+      <h2 class="step-title">Wait for Changes to Take Effect</h2>
+    </div>
+    <div class="step-content">
+      <div class="instruction">
+        <p>DNS changes (what you just did) take time to spread across the internet. This is called "propagation."</p>
+        <ul style="margin-top: 10px;">
+          <li><strong>Minimum wait:</strong> 15 minutes</li>
+          <li><strong>Typical wait:</strong> 1-4 hours</li>
+          <li><strong>Maximum wait:</strong> 24-48 hours (rare)</li>
+        </ul>
+      </div>
+
+      <div class="important">
+        <div class="important-title">💡 How to Check If It's Working</div>
+        <p>Visit <strong>www.dnschecker.org</strong> and type in <span class="code">starship-solutions.com</span></p>
+        <p style="margin-top: 8px;">When you see green checkmarks with numbers starting with <span class="code">185.199</span>, it's working!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 7 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">7</div>
+      <h2 class="step-title">Turn On Security (HTTPS)</h2>
+    </div>
+    <div class="step-content">
+      <p style="margin-bottom: 15px;">Once the DNS changes have taken effect (Step 6), do this:</p>
+
+      <div class="instruction">
+        <ol>
+          <li>Go to your GitHub repository (your web developer can provide the link)</li>
+          <li>Click on <span class="highlight">Settings</span> (tab near the top)</li>
+          <li>In the left sidebar, click <span class="highlight">Pages</span></li>
+          <li>Under "Custom domain", make sure it shows <span class="code">starship-solutions.com</span></li>
+          <li>Check the box that says <span class="highlight">Enforce HTTPS</span></li>
+          <li>Wait 5-10 minutes for the security certificate to activate</li>
+        </ol>
+      </div>
+
+      <div class="warning">
+        <div class="warning-title">⚠️ If "Enforce HTTPS" is grayed out</div>
+        <p>This means DNS hasn't fully propagated yet. Wait a bit longer and try again.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- FINAL CHECKLIST -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">✓</div>
+      <h2 class="step-title">Final Checklist</h2>
+    </div>
+    <div class="step-content">
+      <p style="margin-bottom: 15px;">Once everything is set up, test these links to make sure they all work:</p>
+
+      <ul class="checklist">
+        <li><strong>https://starship-solutions.com</strong> — Main homepage</li>
+        <li><strong>https://www.starship-solutions.com</strong> — Should also work</li>
+        <li><strong>https://starship-solutions.com/legalshield.html</strong> — LegalShield page</li>
+        <li><strong>https://starship-solutions.com/credit.html</strong> — Credit services page</li>
+        <li><strong>https://starship-solutions.com/business-loans.html</strong> — Business loans page</li>
+      </ul>
+
+      <div class="important">
+        <div class="important-title">🎉 Congratulations!</div>
+        <p>If all the links work and show your new website, you're all done! Your new Starship Solutions website is now live at your custom domain.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- TROUBLESHOOTING -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-number">?</div>
+      <h2 class="step-title">Troubleshooting</h2>
+    </div>
+    <div class="step-content">
+      <div class="instruction">
+        <p><strong>If you see your OLD website:</strong></p>
+        <ul>
+          <li>Clear your browser cache: Press <span class="code">Ctrl + Shift + R</span> (Windows) or <span class="code">Cmd + Shift + R</span> (Mac)</li>
+          <li>Try opening the site in a private/incognito browser window</li>
+          <li>Wait longer — DNS changes may still be propagating</li>
+        </ul>
+      </div>
+
+      <div class="instruction">
+        <p><strong>If you see a "404 Not Found" error:</strong></p>
+        <ul>
+          <li>DNS may not have fully propagated — wait a few more hours</li>
+          <li>Double-check that all 4 A records were added correctly</li>
+        </ul>
+      </div>
+
+      <div class="instruction">
+        <p><strong>If HTTPS isn't working:</strong></p>
+        <ul>
+          <li>Make sure "Enforce HTTPS" is checked in GitHub Pages settings</li>
+          <li>Wait up to 24 hours for the security certificate to be issued</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p><strong>Need Help?</strong></p>
+    <p>Contact your web developer if you run into any issues.</p>
+    <p style="margin-top: 15px; color: #999;">Guide created for Starship Solutions • February 2026</p>
+  </div>
+
+</body>
+</html>
